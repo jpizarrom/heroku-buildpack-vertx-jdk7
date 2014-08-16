@@ -13,8 +13,15 @@ addons:
 EOF
 
 if [ ! -f $BUILD_DIR/Procfile ]; then
+if [ -f $BUILD_DIR/server.groovy ] ; then
 cat <<EOF
 default_process_types:
   web: vertx run server.groovy
 EOF
+elif [ -f $BUILD_DIR/server.js ] ;then
+cat <<EOF
+default_process_types:
+  web: vertx run server.js
+EOF
+fi
 fi
