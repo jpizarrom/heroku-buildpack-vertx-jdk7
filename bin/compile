@@ -12,6 +12,8 @@ CACHE_DIR=$2
 #create the cache dir if it doesn't exist
 mkdir -p $CACHE_DIR
 
+apt-get install libboost-all-dev
+
 cd $BUILD_DIR
 if [ -d "$CACHE_DIR/.jdk7" ]; then
   echo -n "copying jdk to app"
